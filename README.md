@@ -11,7 +11,7 @@ Driver for MP2660 5V USB, 500mA, I2C-Controlled Linear Charger with Power Path M
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/mp2660^1.0.0
+idf.py add-dependency esp-idf-lib/mp2660^1.0.0
 ```
 
 ## Support
