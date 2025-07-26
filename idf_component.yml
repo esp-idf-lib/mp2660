@@ -1,5 +1,5 @@
 ---
-version: 1.0.0
+version: 1.0.1
 description: Driver for MP2660 5V USB, 500mA, I2C-Controlled Linear Charger with Power Path Management for Single-Cell Li-Ion Battery
 license: BSD-3
 targets:
