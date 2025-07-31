@@ -128,12 +128,12 @@ esp_err_t mp2660_set_chrg_current_ctrl(i2c_dev_t *dev, mp2660_charge_current_ctr
 
 esp_err_t mp2660_get_pre_chrg_term_current(i2c_dev_t *dev, mp2660_pre_charge_term_current_t* pre_chrg_term_current)
 {
-   return mp2660_read(dev, MP2660_PRECHARGE_TERMINATION_CURRENT_REG_ADDR, pre_chrg_term_current);
+    return mp2660_read(dev, MP2660_PRECHARGE_TERMINATION_CURRENT_REG_ADDR, pre_chrg_term_current);
 }
 
 esp_err_t mp2660_set_pre_chrg_term_current(i2c_dev_t *dev, mp2660_pre_charge_term_current_t* pre_chrg_term_current)
 {
-   return mp2660_write(dev, MP2660_PRECHARGE_TERMINATION_CURRENT_REG_ADDR, pre_chrg_term_current);
+    return mp2660_write(dev, MP2660_PRECHARGE_TERMINATION_CURRENT_REG_ADDR, pre_chrg_term_current);
 }
 
 esp_err_t mp2660_get_chrg_voltage_control(i2c_dev_t *dev, mp2660_charge_voltage_ctrl_t* chrg_voltage_ctrl)

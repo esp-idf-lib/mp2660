@@ -65,8 +65,10 @@ extern "C" {
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t i_in_lim_0 : 1;     //!< 000: 85mA, 001: 130mA, 010: 175mA, 011: 220mA, 100: 265mA, 101: 310mA, 110: 355mA, 111: 455mA, Default: 455mA (111)
             uint8_t i_in_lim_1 : 1;     //!< s.a.
             uint8_t i_in_lim_2 : 1;     //!< s.a.
@@ -76,11 +78,12 @@ typedef struct
             uint8_t v_in_min_3 : 1;     //!< 640mV / RW
             uint8_t en_hiz : 1;         //!< 0: Disable 1: Enable / RW / This bit only controls the on and off of the LDO FET.
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } mp2660_input_source_t;
 
 /**
@@ -88,8 +91,10 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t v_batt_uvlo_0 : 1;      //!< 0.1V / RW / Offset: 2.4V, Range: 2.4V - 3.1V, Default: 2.8V (100)
             uint8_t v_batt_uvlo_1 : 1;      //!< 0.2V / RW
             uint8_t v_batt_uvlo_2 : 1;      //!< 0.4V / RW
@@ -99,11 +104,12 @@ typedef struct
             uint8_t i2c_watchdog_timer : 1; //!< 0: Normal 1: Reset / RW / Default: Normal (0)
             uint8_t reg_reset : 1;          //!< 0: Keep current setting 1: Reset / RW / Default: Keep current register setting (0)
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                    //!< Register data
         } register_data;
     };
-    
+
 } mp2660_power_on_conf_t;
 
 /**
@@ -111,8 +117,10 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t icc_4 : 1;      //!< 272mA / RW / Offset: 8mA, Range: 8mA - 535mA, Default: 246mA (01110)
             uint8_t icc_3 : 1;      //!< 136mA / RW
             uint8_t icc_2 : 1;      //!< 68mA / RW
@@ -122,11 +130,12 @@ typedef struct
             uint8_t reserved_2 : 1; //!< NA
             uint8_t reserved_1 : 1; //!< NA
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;            //!< Register data
         } register_data;
     };
-    
+
 } mp2660_charge_current_ctrl_t;
 
 /**
@@ -134,8 +143,10 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t reserved_1 : 1; //!< NA
             uint8_t i_dschg_3 : 1;  //!< 800mA / RW / Offset: 200mA, Range: 200mA - 1.6A, Default: 1.0A (1001)
             uint8_t i_dschg_2 : 1;  //!< 400mA / RW
@@ -145,11 +156,12 @@ typedef struct
             uint8_t i_pre_1 : 1;    //!< 14mA / RW / Offset: 6mA, Range: 6mA - 27mA, Default: 20mA (10)
             uint8_t i_pre_0 : 1;    //!< 7mA / RW
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;            //!< Register data
         } register_data;
     };
-    
+
 } mp2660_pre_charge_term_current_t;
 
 /**
@@ -157,8 +169,10 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t v_bat_reg_5 : 1;    //!< 480mV / RW / Offset: 3.60V, Range: 3.60V - 4.545V, Default: 4.2V (101000)
             uint8_t v_bat_reg_4 : 1;    //!< 240mV / RW
             uint8_t v_bat_reg_3 : 1;    //!< 120mV / RW
@@ -168,11 +182,12 @@ typedef struct
             uint8_t v_batt_pre : 1;     //!< 0: 2.8V 1: 3.0V / RW / Default: 3.0V (1)
             uint8_t v_batt_rech : 1;    //!< 0: 150mV 1: 300mV / RW / Default: 300mV (1)
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } mp2660_charge_voltage_ctrl_t;
 
 /**
@@ -180,22 +195,25 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t reserved : 1;       //!< NA
-            uint8_t en_term : 1;        //!< 0: Disable 1: Enable / RW / Default: Enable (1) 
+            uint8_t en_term : 1;        //!< 0: Disable 1: Enable / RW / Default: Enable (1)
             uint8_t watchdog_1 : 1;     //!< 00: Disable timer 01: 40s 10: 80s 11: 160s / RW / Default: Disable timer (00)
-            uint8_t watchdog_0 : 1;     //!< s.a. 
-            uint8_t en_timer : 1;       //!< 0: Disable 1: Enable / RW / Default: Enable timer (1) 
+            uint8_t watchdog_0 : 1;     //!< s.a.
+            uint8_t en_timer : 1;       //!< 0: Disable 1: Enable / RW / Default: Enable timer (1)
             uint8_t chg_timer_1 : 1;    //!< 00: 3hrs 01: 5hrs 10: 8hrs 11: 12hrs / RW / Default: 5hrs (01)
-            uint8_t chg_timer_0 : 1;    //!< s.a. 
-            uint8_t term_tmr : 1;       //!< 0: Disable 1: Enable / RW / Default: Disable (0) 
+            uint8_t chg_timer_0 : 1;    //!< s.a.
+            uint8_t term_tmr : 1;       //!< 0: Disable 1: Enable / RW / Default: Disable (0)
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } mp2660_charge_term_timer_ctrl_t;
 
 /**
@@ -203,8 +221,10 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t reserved_1 : 1; //!< NA
             uint8_t tmr2x_en : 1;   //!< 0: Disable 2X extended safety timer during PPM 1: Enable 2X extended safety timer during PPM / RW / Default: Disable (0)
             uint8_t fet_dis : 1;    //!< 0: Enable 1: Turn off / RW / Default: Enable (0)
@@ -214,11 +234,12 @@ typedef struct
             uint8_t tj_reg_0 : 1;   //!< 00: 60°C 01: 80°C 10: 100°C 11: 120°C / RW / 120°C (11)
             uint8_t tj_reg_1 : 1;   //!< s.a.
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;            //!< Register data
         } register_data;
     };
-    
+
 } mp2660_misc_op_ctrl_t;
 
 /**
@@ -226,22 +247,25 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t reserved_1 : 1; //!< NA
             uint8_t rev_1 : 1;      //!< Revision number / R / Default: (00)
-            uint8_t rev_0 : 1;      //!< s.a. 
+            uint8_t rev_0 : 1;      //!< s.a.
             uint8_t chg_stat_1 : 1; //!< 00: Not charging 01: Pre-charge 10: Charge 11: Charge done / R / Default: Not charging (00)
-            uint8_t chg_stat_0 : 1; //!< s.a. 
+            uint8_t chg_stat_0 : 1; //!< s.a.
             uint8_t ppm_stat : 1;   //!< 0: No PPM 1: In PPM / R / Default: No PPM (0) (no power-path management happens)
             uint8_t pg_stat : 1;    //!< 0: Power fail 1: Power good / R / Default: Power fail (0)
             uint8_t therm_stat : 1; //!< 0: No thermal regulation 1: In thermal regulation / R / No thermal regulation (0)
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;            //!< Register data
         } register_data;
     };
-    
+
 } mp2660_sys_status_t;
 
 /**
@@ -249,8 +273,10 @@ typedef struct
  */
 typedef struct
 {
-    union {
-        struct {
+    union
+    {
+        struct
+        {
             uint8_t reserved_1 : 1;     //!< NA
             uint8_t watchdog_fault : 1; //!< 0: Normal 1: Watchdog timer expiration / R / Default: Normal (0)
             uint8_t vin_fault : 1;      //!< 0: Normal 1: Input fault (OVP or bad source) / R / Default: Normal (0)
@@ -260,11 +286,12 @@ typedef struct
             uint8_t reserved_2 : 1;     //!< NA
             uint8_t reserved_3 : 1;     //!< NA
         } data_fields;
-        struct {
+        struct
+        {
             uint8_t reg;                //!< Register data
         } register_data;
     };
-    
+
 } mp2660_fault_t;
 
 /**
