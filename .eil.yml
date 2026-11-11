@@ -1,7 +1,7 @@
 ---
 name: mp2660
 description: Driver for MP2660 5V USB, 500mA, I2C-Controlled Linear Charger with Power Path Management for Single-Cell Li-Ion Battery
-version: 1.0.7
+version: 1.0.8
 groups:
   - battery
 code_owners:
@@ -10,18 +10,7 @@ depends:
   - i2cdev
   - esp_idf_lib_helpers
 thread_safe: yes
-targets:
-  - esp32
-  - esp32s2
-  - esp32c3
-  - esp32s3
-  - esp32c2
-  - esp32c6
-  - esp32h2
-  - esp32p4
-  - esp32c5
-  - esp32c61
-license: BSD-3
+license: BSD-3-Clause
 copyrights:
   - name: mmarkwort
     year: 2023
